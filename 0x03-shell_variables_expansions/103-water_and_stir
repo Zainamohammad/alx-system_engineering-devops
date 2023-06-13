@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# convert WATER from base water to base 10
+WATER_DEC=$((36#"$WATER"))
+
+# convert STIR from base stir to base 10
+STIR_DEC=$((24#"$STIR"))
+
+# add the two decimal values
+RESULT_DEC=$((WATER_DEC + STIR_DEC))
+
+# convert the result to base bestchol
+RESULT_BESTCHOL=$(echo "obase=46; $RESULT_DEC" | bc)
+
+# print the result
+echo "The sum of WATER ($WATER) and STIR ($STIR) is $RESULT_BESTCHOL in base bestchol."
